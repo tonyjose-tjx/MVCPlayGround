@@ -1,0 +1,22 @@
+﻿@model IEnumerable<MVCSportsStorePractice.Domain.Entities.Product>
+
+@{
+    ViewBag.Title = "View Products";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>View Products</h2>
+
+@{
+    foreach (var p in Model)
+    {
+        <div id="productWrapper"  style="width:100%; margin:10px; padding:10px; border-bottom:1px solid Gray;">
+            <div>
+                <h3>@p.Name</h3>
+                <h4>@p.Description</h4>
+                <h5>@p.Price</h5>
+            </div>
+        </div>
+    }
+ }
+

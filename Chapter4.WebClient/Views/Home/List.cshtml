@@ -1,0 +1,20 @@
+﻿@model IEnumerable<Chapter4.Domain.Models.Product>
+
+@{
+    ViewBag.Title = "List";
+}
+<html>
+<head>
+    <h2>List</h2>
+</head>
+<body>
+    @foreach (Chapter4.Domain.Models.Product p in Model)
+    {
+        <p>
+            Product Name : @p.Name;
+            Price        : £@p.Price;
+        </p>
+    }
+</body>
+
+</html>
