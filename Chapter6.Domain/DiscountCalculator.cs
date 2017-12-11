@@ -21,7 +21,23 @@ namespace Chapter6.Domain.Models
     }
 
 
-   
+    public class FelxibleDiscounter : IDiscountCalculator
+    {
+        public decimal GetDiscountedValue(decimal price)
+        {
+            if (price > 100)
+            {
+                return (price * .75m);
+            }
+            else if (price > 60)
+            {
+                return (price * .90m);
+            }
+            else {
+                return price;
+            }
+        }
+    }
 
 
 }
