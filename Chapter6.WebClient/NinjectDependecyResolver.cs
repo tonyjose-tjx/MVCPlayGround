@@ -29,7 +29,7 @@ namespace Chapter6.WebClient
         private void AddBinding()
         {
             _kernal.Bind<Chapter6.Domain.Models.IValueCalculator>().To<Domain.Models.LinqValueCalculator>();
-            _kernal.Bind<Chapter6.Domain.Models.IDiscountCalculator>().To<Domain.Models.DiscountCalculator>();
+            _kernal.Bind<Chapter6.Domain.Models.IDiscountCalculator>().To<Domain.Models.DiscountCalculator>().WithPropertyValue("DiscountInPercentage", 80m);
         }
     }
 }

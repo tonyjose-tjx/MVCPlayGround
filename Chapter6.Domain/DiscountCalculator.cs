@@ -11,11 +11,17 @@ namespace Chapter6.Domain.Models
 
     public class DiscountCalculator : IDiscountCalculator
     {
+
+        public decimal DiscountInPercentage { get; set; }
+
         public decimal GetDiscountedValue(decimal price)
         {
-            return price * .8m;
+            return price * DiscountInPercentage/100;
         }
     }
+
+
+   
 
 
 }
