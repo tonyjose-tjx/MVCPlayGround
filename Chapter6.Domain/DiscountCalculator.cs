@@ -16,6 +16,10 @@ namespace Chapter6.Domain.Models
 
         public decimal GetDiscountedValue(decimal price)
         {
+            if (price < 0)
+            {
+                throw new ArgumentException("price cannot be less than 0");
+            }
             return price * DiscountInPercentage/100;
         }
     }
@@ -25,7 +29,13 @@ namespace Chapter6.Domain.Models
     {
         public decimal GetDiscountedValue(decimal price)
         {
-            if (price > 100)
+
+
+            if (price < 0)
+            {
+                throw new ArgumentException("price cannot be less than 0");
+            }
+            else if (price > 100)
             {
                 return (price * .75m);
             }
